@@ -6,6 +6,7 @@ node-signal-slot are used for communication between objects like Qt.
 # Usage
 
 MetaObject.connect(*sender*,*signal*,*receiver*,*slot*);
+
 MetaObject.disconnect(*sender*,*signal*,*receiver*,*slot*);
 
 
