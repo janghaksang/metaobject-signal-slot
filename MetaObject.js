@@ -45,8 +45,8 @@ var MetaObject = (function() {
         if(metaObject[senderName][i][signalName] && metaObject[senderName][i][signalName].length) {
           let method = sender[signalName]['signal'] || sender[signalName];
           sender[signalName] = (...args) => {
-            method(args);
-            metaObject[senderName][i][signalName].map((m)=>m(args));
+            method.apply(sender,args);
+            metaObject[senderName][i][signalName].map((m)=>m.apply(receiver,args));
           };
           sender[signalName]['signal'] = method;
         }
@@ -75,7 +75,7 @@ var MetaObject = (function() {
 
     let method = sender[signalName]['signal'] || sender[signalName];
     sender[signalName] = (...args) => {
-      method.apply(sender, args);
+      method.apply(sender,args);
       metaObject[senderName][i][signalName].map((m)=>m.apply(receiver,args));
     };
     sender[signalName]['signal'] = method;

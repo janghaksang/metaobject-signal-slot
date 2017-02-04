@@ -1,3 +1,7 @@
+
+> node-signal-slot@1.0.0 example1 D:\workspace\Javascript\node-signal-slot
+> babel-node --presets es2015 example1.js start
+
 onRightButtonPressed
 ScrollView updated: 2/5
 onRightButtonPressed
@@ -8,9 +12,6 @@ onRightButtonPressed
 ScrollView updated: 5/5
 onLeftButtonPressed
 ScrollView updated: 4/5
-onRightButtonPressed
-ScrollView updated: 5/5
-onRightButtonPressed
-ScrollView updated: 5/5
 onLeftButtonPressed
-ScrollView updated: 4/5
+ScrollView updated: 3/5
+일괄 작업을 끝내시겠습니까 (Y/N)? 

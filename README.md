@@ -110,12 +110,8 @@ onRightButtonPressed
 ScrollView updated: 5/5
 onLeftButtonPressed
 ScrollView updated: 4/5
-onRightButtonPressed
-ScrollView updated: 5/5
-onRightButtonPressed
-ScrollView updated: 5/5
 onLeftButtonPressed
-ScrollView updated: 4/5
+ScrollView updated: 3/5
 ```
 
 # Example2
@@ -130,17 +126,17 @@ class A {
     console.log("A.signal("+any+")");
   }
 
-  slot(any,bny) {
-    console.log("A.slot("+any+","+bny+")");
+  slot(...any) {
+    console.log("A.slot("+any+")");
   }
 };
 
 class B {
   signal(any,bny) {
-    console.log("C.signal("+any+","+bny+")");
+    console.log("B.signal("+any+","+bny+")");
   }
 
-  slot(any) {
+  slot(...any) {
     console.log("B.slot("+any+")");
     this.signal(any,any);
   }
@@ -151,7 +147,7 @@ class C {
     console.log("C.signal("+any+","+bny+")");
   }
 
-  slot(any) {
+  slot(...any) {
     console.log("C.slot("+any+")");
     this.signal(any,any)
   }
@@ -181,11 +177,11 @@ B.slot(hello)
 B.signal(hello,hello)
 C.slot(hello,hello)
 C.signal(hello,hello,hello,hello)
-A.slot(hello,hello,hello,hello,undefined)
+A.slot(hello,hello,hello,hello)
 B.slot(hello)
 B.signal(hello,hello)
 A.signal(world)
 C.slot(world)
 C.signal(world,world)
-A.slot(world,world,undefined)
+A.slot(world,world)
 ```

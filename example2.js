@@ -5,8 +5,8 @@ class A {
     console.log("A.signal("+any+")");
   }
 
-  slot(any,bny) {
-    console.log("A.slot("+any+","+bny+")");
+  slot(...any) {
+    console.log("A.slot("+any+")");
   }
 };
 
@@ -15,7 +15,7 @@ class B {
     console.log("B.signal("+any+","+bny+")");
   }
 
-  slot(any) {
+  slot(...any) {
     console.log("B.slot("+any+")");
     this.signal(any,any);
   }
@@ -26,7 +26,7 @@ class C {
     console.log("C.signal("+any+","+bny+")");
   }
 
-  slot(any) {
+  slot(...any) {
     console.log("C.slot("+any+")");
     this.signal(any,any)
   }
