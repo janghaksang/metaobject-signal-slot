@@ -1,0 +1,16 @@
+onRightButtonPressed
+ScrollView updated: 2/5
+onRightButtonPressed
+ScrollView updated: 3/5
+onRightButtonPressed
+ScrollView updated: 4/5
+onRightButtonPressed
+ScrollView updated: 5/5
+onLeftButtonPressed
+ScrollView updated: 4/5
+onRightButtonPressed
+ScrollView updated: 5/5
+onRightButtonPressed
+ScrollView updated: 5/5
+onLeftButtonPressed
+ScrollView updated: 4/5
