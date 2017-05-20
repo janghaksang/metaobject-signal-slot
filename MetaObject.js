@@ -45,8 +45,8 @@ var MetaObject = (function() {
         if(metaObject[senderName][i][signalName] && metaObject[senderName][i][signalName].length) {
           let method = sender[signalName]['signal'] || sender[signalName];
           sender[signalName] = (...args) => {
-            method.apply(sender,args);
-            metaObject[senderName][i][signalName].map((m)=>m.apply(receiver,args));
+            method.call(receiver,...args);
+            metaObject[senderName][i][signalName].map((m)=>m.call(receiver,...args));
           };
           sender[signalName]['signal'] = method;
         }
@@ -66,17 +66,18 @@ var MetaObject = (function() {
     let metaObject = sender['metaObject'] = sender['metaObject'] || {};
     metaObject[senderName] = metaObject[senderName] || [];
     let [i,j] = insertIndex(sender,signalName,receiver,slotName);
+    console.log([i,j]);
     metaObject[senderName][i] = metaObject[senderName][i] || [];
     metaObject[senderName][i]['sender'] = senderName;
 
     metaObject[senderName][i][signalName] = metaObject[senderName][i][signalName] || [];
-    metaObject[senderName][i][signalName].push((...args)=>receiver[slotName](args));
+    metaObject[senderName][i][signalName].push((...args)=>receiver[slotName].call(receiver,...args));
     metaObject[senderName][i][signalName][j]['receiver'] = receiverName;
 
     let method = sender[signalName]['signal'] || sender[signalName];
     sender[signalName] = (...args) => {
-      method.apply(sender,args);
-      metaObject[senderName][i][signalName].map((m)=>m.apply(receiver,args));
+      method.call(sender,...args);
+      metaObject[senderName][i][signalName].map((m)=>m.call(receiver,...args));
     };
     sender[signalName]['signal'] = method;
   };
