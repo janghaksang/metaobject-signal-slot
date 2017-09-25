@@ -3,8 +3,10 @@
 	"version":"1.0.0",
 	"presets":["es2015"],
 	"scripts": {
-		   "example1":"babel-node --presets es2015 example1.js start",
-			 "example2":"babel-node --presets es2015 example2.js start"
+		   "example1":"babel-node --presets es2015 example1.js",
+			 "example2":"babel-node --presets es2015 example2.js",
+ 			 "example1.2":"babel-node --presets es2015 example1.2.js",
+			 "example2.2":"babel-node --presets es2015 example2.2.js"
 	},
 	"devDependencies": {
 			   "babel-cli":"^6.0.0",
