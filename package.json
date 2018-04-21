@@ -9,7 +9,10 @@
 			"env"
 		]
 	},
-	"main": "MetaObject.js",
+	"scripts": {
+		"build": "babel MetaObject.js --out-file index.js"
+	},
+	"main": "index.js",
 	"author": {
 		"name": "janghaksang",
 		"email": "janghaksang@gmail.com"
