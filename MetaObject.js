@@ -1,8 +1,4 @@
-export default class MetaObject {
-  constructor() {
-    this.metaSignals = {};
-  }
-
+class MetaObject {
   checkArgs(sender,signalName,receiver,slotName) {
     if(!sender || !sender['constructor']) throw new Error(`No Sender: (${sender},${signalName},${receiver},${slotName})`);
     if(typeof sender[signalName] != 'function') throw new Error(`No Signal: (${sender},${signalName},${receiver},${slotName})`);
@@ -86,13 +82,15 @@ export default class MetaObject {
     this.checkArgs(sender,signalName,receiver,slotName);
     this.init(sender,signalName,receiver,slotName);
     this.replaceMethod(sender,signalName,receiver,slotName);
-    console.log('[DEBUG]',`connect(${sender.constructor.name},${signalName},${receiver.constructor.name},${slotName})`);
   }
 
   disconnect(sender,signalName,receiver,slotName) {
     this.checkArgs(sender,signalName,receiver,slotName);
     this.deinit(sender,signalName,receiver,slotName);
     this.replaceMethod(sender,signalName,receiver,slotName);
-    console.log('[DEBUG]',`disconnect(${sender.constructor.name},${signalName},${receiver.constructor.name},${slotName})`);
   }
 }
+
+const metaObject = new MetaObject();
+
+export default metaObject;
