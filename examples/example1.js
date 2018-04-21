@@ -1,17 +1,7 @@
-import MetaObject from './MetaObject2';
-
-function* num() {
-  let index = 0;
-  while(true) {
-    yield index++;
-  }
-}
-
-let n = num();
+import MetaObject from 'metaobject-signal-slot';
 
 function rand(min, max) {
-    let r = n.next();
-    return r.value%(max-min)+min;
+    return Math.floor(Math.random() * (max - min) + min);
 }
 
 class NavigationBar {

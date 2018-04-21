@@ -1,8 +1,16 @@
 {
-	"name": "metaobject-signal-slot",
+	"name": "examples",
 	"version": "1.0.0",
+	"scripts": {
+		"example1": "babel-node example1.js",
+		"example2": "babel-node example2.js"
+	},
+	"devDependencies": {
+		"babel-cli": "^6.0.0"
+	},
 	"dependencies": {
-		"babel-preset-env": "^1.6.1"
+		"babel-preset-env": "^1.6.1",
+		"metaobject-signal-slot": "file:.."
 	},
 	"babel": {
 		"presets": [

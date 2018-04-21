@@ -1,4 +1,4 @@
-import MetaObject from './MetaObject'
+import MetaObject from 'metaobject-signal-slot';
 
 class A {
   signal(any) {
