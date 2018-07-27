@@ -1,6 +1,6 @@
 # Introduction
 
-node-signal-slot are used for communication between objects like Qt.
+metaobject-signal-slot are used for communication between objects like Qt.
 
 
 # Usage
