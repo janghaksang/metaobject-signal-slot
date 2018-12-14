@@ -1,6 +1,6 @@
 {
 	"name": "metaobject-signal-slot",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"dependencies": {
 		"babel-preset-env": "^1.6.1"
 	},

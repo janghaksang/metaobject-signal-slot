@@ -60,14 +60,14 @@ class MetaObject {
     if(metaSignals[senderName]&&metaSignals[senderName][signalName]&&metaSignals[senderName][signalName].length) {
       sender[signalName] = function (...args) {
         let ret = method.call(sender,...args)
-        metaSignals[senderName][signalName].forEach(function(r) {
+        metaSignals[senderName][signalName].forEach(function(r,index,arr) {
           try {
             if(r&&r.method) r.method.call(receiver,...args);
             else {
-              console.log('Error connect(',sender,signalName,receiver,slotName,')');
+              console.warn('connect(',sender,signalName,receiver,slotName,')',index,arr);
             }
           } catch(e) {
-            console.log('Exception',e.message,e.stack);
+            console.error('connect(',sender,signalName,receiver,slotName,')',e.message,e.stack);
           }
         });
         return ret;
